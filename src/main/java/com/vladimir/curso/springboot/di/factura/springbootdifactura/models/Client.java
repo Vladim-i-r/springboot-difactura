@@ -2,8 +2,13 @@ package com.vladimir.curso.springboot.di.factura.springbootdifactura.models;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Component
+@RequestScope //Es del mismo rango que Invoice, por lo que al destruirse y hacer request, no se duplica. Se genera un proxy
+@JsonIgnoreProperties({"targetSource","advisors"})
 public class Client {
 
     @Value("${client.name}")
