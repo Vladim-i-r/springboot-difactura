@@ -15,7 +15,7 @@ import jakarta.annotation.PreDestroy;
 
 @Component
 @RequestScope                                       // Es compartido con toda la aplicacion por cada request, se genera un proxy
-@JsonIgnoreProperties({"targetSource","advisors"})  // Usando Postman, aparece un error y con esto lo omitimos, Ej:  com.vladimir.curso.springboot.di.factura.springbootdifactura.models.Invoice$$SpringCGLIB$$0[\"advisors\"]
+@JsonIgnoreProperties({"targetSource","advisors"})  // Usando Postman, aparece un error y con esto lo omitimos, Ej:  com.vladimir.curso.springboot.di.factura.springbootdifactura.models.Invoice$$SpringCGLIB$$0[\"advisors\"], se puede quitar y modificiar el controller
 public class Invoice { //Factura
 
     @Autowired
